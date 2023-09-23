@@ -1,15 +1,17 @@
 ---
+import Leaflet from '../components/Leaflet.astro';
 import Layout from '../layouts/Layout.astro';
+
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<section class="text-black">
+		<section class="text-black flex items-center h-[600px]">
 			<div>
-				<h1>
+				<h1 class="text-7xl font-bold max-w-[700px] mr-2 tracking-wider">
 					Tu próximo trabajo, más cerca de lo que pensás
 				</h1>
-				<button class="flex items-center bg-red-500 px-4 py-2 rounded-lg gap-2 text-lg font-semibold text-white">
+				<button class="flex mt-6 items-center bg-red-500 px-4 py-2 rounded-lg gap-2 text-lg font-semibold text-white">
 					<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-download" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
 						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
 						<path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
@@ -19,6 +21,17 @@ import Layout from '../layouts/Layout.astro';
 					Descargar Cuchiflu
 				</button>
 			</div>
+			<div class="w-full">
+				<Leaflet
+					container="leafletmap"
+					latitude="-34.6035887474444"
+					longitude="-58.38158113199385"
+					zoom="10"
+					tileLayer="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+					attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+				/>
+			</div>
+				
 		</section>
 	</main>
 </Layout>
